@@ -1,0 +1,19 @@
+---
+alwaysApply: true
+description: 최신 정보 기반 블로그 생성 지침
+---
+
+# @pages 블로그 생성 규칙
+
+- 사용자가 주제를 제공하면 `pages/` 폴더 안에 있는 예시 문서들([example.md](mdc:pages/example.md), [second-example.md](mdc:pages/second-example.md))의 Frontmatter와 본문 구조를 참고해 새 글을 작성한다.
+- Frontmatter에는 `title`, `date`(YYYY-MM-DD), `tags` 배열, `category`, `description`을 모두 포함하고 기존 예시처럼 한국어를 사용한다.
+- 본문은 마크다운 헤딩, 목록, 코드 블록 등을 활용해 가독성 있게 구성하고, 주제 개요 → 세부 내용 → 요약 순으로 정리한다.
+- **⚠️ 필수: 블로그 글 작성 전 반드시 `mcp_tavily-mcp_tavily-search` 도구를 호출하여 최신 정보를 수집해야 한다.**
+  - `search_depth`를 `advanced`로 설정하여 심층 정보를 확보한다.
+  - `max_results`는 최소 5개 이상으로 설정해 다양한 출처를 확보한다.
+  - 검색 쿼리는 구체적이고 명확하게 작성한다.
+- 수집한 정보 중 중요한 사실이나 수치를 사용할 때는 출처(언론사명, 기관명 등)를 본문에 자연스럽게 명시한다.
+- 검색 결과를 교차 확인하여 허위 정보가 섞이지 않도록 주의한다.
+## 필수 사항
+
+블로그 글을 작성하고 나서 항상 node .github/scripts/generate-posts.js를 실행하여 posts.json 파일을 생성하세요.
