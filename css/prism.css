@@ -1,0 +1,191 @@
+/* PrismJS 기본 테마 - 다크/라이트 모드 지원 */
+:root {
+    --prism-bg: #f6f8fa;
+    --prism-text: #24292e;
+    --prism-comment: #6a737d;
+    --prism-punctuation: #586069;
+    --prism-property: #005cc5;
+    --prism-selector: #6f42c1;
+    --prism-operator: #d73a49;
+    --prism-keyword: #d73a49;
+    --prism-function: #6f42c1;
+    --prism-variable: #e36209;
+    --prism-string: #032f62;
+    --prism-number: #005cc5;
+    --prism-boolean: #005cc5;
+}
+
+/* 다크 모드용 Prism 색상 */
+[data-theme="dark"] {
+    --prism-bg: #2d3748;
+    --prism-text: #e2e8f0;
+    --prism-comment: #718096;
+    --prism-punctuation: #a0aec0;
+    --prism-property: #63b3ed;
+    --prism-selector: #9f7aea;
+    --prism-operator: #fc8181;
+    --prism-keyword: #fc8181;
+    --prism-function: #9f7aea;
+    --prism-variable: #fbb6ce;
+    --prism-string: #68d391;
+    --prism-number: #63b3ed;
+    --prism-boolean: #63b3ed;
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+    color: var(--prism-text);
+    background: var(--prism-bg);
+    text-shadow: none;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    font-size: 1em;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+    tab-size: 4;
+    hyphens: none;
+}
+
+pre[class*="language-"] {
+    padding: 1em;
+    margin: 0.5em 0;
+    overflow: auto;
+    border-radius: 0.3em;
+}
+
+:not(pre) > code[class*="language-"] {
+    padding: 0.1em;
+    border-radius: 0.3em;
+    white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+    color: var(--prism-comment);
+}
+
+.token.punctuation {
+    color: var(--prism-punctuation);
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+    color: var(--prism-property);
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+    color: var(--prism-string);
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+    color: var(--prism-operator);
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+    color: var(--prism-function);
+}
+
+.token.keyword {
+    color: var(--prism-keyword);
+}
+
+.token.regex,
+.token.important {
+    color: var(--prism-variable);
+}
+
+.token.important,
+.token.bold {
+    font-weight: bold;
+}
+
+.token.italic {
+    font-style: italic;
+}
+
+.token.entity {
+    cursor: help;
+}
+
+pre[class*="language-"].line-numbers {
+    position: relative;
+    padding-left: 3.8em;
+    counter-reset: linenumber;
+}
+
+pre[class*="language-"].line-numbers > code {
+    position: relative;
+    white-space: inherit;
+}
+
+.line-numbers .line-numbers-rows {
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    font-size: 100%;
+    left: -3.8em;
+    width: 3em;
+    letter-spacing: -1px;
+    border-right: 1px solid #999;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.line-numbers-rows > span {
+    display: block;
+    counter-increment: linenumber;
+}
+
+.line-numbers-rows > span:before {
+    content: counter(linenumber);
+    color: #999;
+    display: block;
+    padding-right: 0.8em;
+    text-align: right;
+}
+
+/* Copy to clipboard 버튼 */
+.copy-to-clipboard {
+    position: absolute;
+    top: 0.5em;
+    right: 0.5em;
+    background: rgba(0, 0, 0, 0.1);
+    border: none;
+    border-radius: 0.25em;
+    padding: 0.25em 0.5em;
+    font-size: 0.8em;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+pre:hover .copy-to-clipboard {
+    opacity: 1;
+}
+
+.copy-to-clipboard:hover {
+    background: rgba(0, 0, 0, 0.2);
+}
